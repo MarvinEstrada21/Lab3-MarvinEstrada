@@ -93,4 +93,4 @@ void winner(char table[][7], int filas){
 		}
 	}
 }
-
+//No estoy 100% de que funcione bien xD

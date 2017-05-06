@@ -1,15 +1,29 @@
-#include <iostream>
+#include <iostream>int main ()
+
 using namespace std;
 
-char** crearMatriz(int);
-void printMatriz(int, char**);
+//char** crearMatriz(int);
+//void printMatriz(int, char**);
+void Initialize(char);
+void PrintBoard(const char);
 
-int main(){
+/*int main(){
 	char** matriz;
 	int filas = 6;
 	int col = 7;
 	printMatriz(filas, col, matriz);
 	return 0;
+}*/
+
+int main (){
+	int filas = 6, columnas = 7;
+	char GameBoard[filas][columnas]; // Array for tracking the game
+
+	Initialize(GameBoard);
+
+	PrintBoard(GameBoard);
+    
+    return 0;
 }
 
 void Initialize(char matriz[filas][columnas]){ 
@@ -19,7 +33,18 @@ void Initialize(char matriz[filas][columnas]){
             matriz[i][j] = EMPTY;
 }
 
-
+void PrintBoard (const char GameBoard[filas][columnas]){
+    cout << "  0   1   2   3   4   5 " << endl;
+    cout << "|-----------------------|" << endl;
+    for (int i = 0; i < filas; i++){
+        cout << "| ";
+        for (int j = 0; j < columnas; j++){
+               cout << GameBoard[i][j];
+            cout << " | ";
+        }
+        cout << endl << "|-----------------------|" << endl;
+    }
+}
 
 
 
